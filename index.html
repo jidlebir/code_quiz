@@ -1,32 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta />
-        <meta />
-        <meta />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
+    <!-- Link Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Nanum+Gothic+Coding:wght@700&family=Playfair+Display+SC&family=Poiret+One&display=swap" rel="stylesheet">
+    <!-- Link CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-    </head>
-    <body>
-        <div class="timer">Time:</div>
-        <div class="questions" id="">
-            <div class="question-tile" id=""></div>
-            <div class="choices" id="">
-                <ol>
-                    <li>
-                        <button></button>
-                    </li>
-                    <li>
-                        <button></button>
-                    </li>
-                    <li>
-                        <button></button>
-                    </li>
-                    <li>
-                        <button></button>
-                    </li>
-                </ol>
-            </div>
+  <body>
+
+    <div class="timer">Time: <span id="time">0</span></div>
+
+    <div class="wrapper">
+      <div id="start-screen" class="start">
+        <h1 id="intro">Welcome to the ultimate</h1>
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          Put your knowledge to the test if you are wrong the time will decrease
+        </p>
+        <button id="start">START QUIZ</button>
+      </div>
+
+      <div id="questions" class="hide">
+        <div id="question-title"></div>
+          <div id="choices" class="choices">
+            <ol>
+              <li>
+                <button type="button" class="btn btn-primary" id="A" onclick="checkChoice('A')"></button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary" id="B" onclick="checkChoice('B')"></button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary" id="C" onclick="checkChoice('C')"></button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary" id="D" onclick="checkChoice('D')"></button>
+              </li>
+              <li style="list-style-type: none; text-align: right; padding-right: 50px;">
+                <h3>Score: <span id="current-score">0</span></h3>
+              </li>
+          </div>
+      </div>
+
+      <div id="finish" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <P> You took <span id="time-taken"></span> seconds.</p>
+        <p> Enter Your initials: <input type="text" id="initials" maxlength="3" placeholder="Enter initials here" />
+          <button id="submit">Submit</button>
+        </p>
+        
+      </div>
+
+      <body>
+        <div class="wrapper">
+          <h1>Highscores</h1>
+          <ol id="highscores"></ol>
+    
+          <a href="index.html"><button>Go Back</button></a>
+          <button id="clear">Clear Highscores</button>
         </div>
-        <script src="script.js"></script>
-    </body>
+
+      <div id="feedback" class="feedback hide"></div>
+    </div>
+
+    <script src="script.js"></script>
+    
+  </body>
 </html>
